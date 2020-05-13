@@ -1,0 +1,42 @@
+
+  <div class="container">
+    <h1>NAUCZYCIEL</h1>
+    <mat-form-field>
+      <mat-label>Wybierz nauczyciela</mat-label>
+        <mat-select>
+          <mat-option>KORWIN MIKKE</mat-option>
+          <mat-option>ANDRZEJ DUDA</mat-option>
+          <mat-option>BYCZEK</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="userData">
+      <button mat-raised-button color="primary"><a routerLink="/" routerLinkActive="active">POWRÓT</a></button>
+      <h2>Imię:</h2>
+      <h2>Nazwisko:</h2>
+      <h2>WIEK:</h2>
+      <h2>Numer tel:</h2>
+      <h2>Email:</h2>
+    </div>
+    
+      
+    <div class="gradeTable">
+      <h2>Moja Klasa</h2>
+      <mat-selection-list #classStudents [multiple]="false">
+        <mat-list-option *ngFor="let student of students">
+          {{student.lastname}}
+        </mat-list-option>
+      </mat-selection-list>
+      <button mat-raised-button color="primary">Zarządaj ocenę</button>
+    </div>
+
+
+    <div class="gradeTable">
+      <h2>Moi Ucznowie</h2>
+      <mat-selection-list #classStudents [multiple]="false">
+        <mat-list-option *ngFor="let student of students">
+          {{student.lastname}}
+        </mat-list-option>
+      </mat-selection-list>
+      <button mat-raised-button color="primary">Zarządaj ocenę</button>
+    </div>
+  </div>

@@ -1,0 +1,22 @@
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .userData{
+    width: 50%;
+    padding: 1%;
+  }
+  
+  .gradeTable{
+    width: 50%;
+    padding: 1%;
+  }
+  table{
+    width: 100%;
+  }
+  
