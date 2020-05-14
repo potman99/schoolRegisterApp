@@ -16,6 +16,9 @@ import { MatListModule } from '@angular/material/list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
+import { EditStudentComponent } from './edit-student/edit-student.component';
+import { TeacherComponent } from './teacher/teacher.component';
+import { Subject } from 'rxjs';
 
 
 
@@ -24,6 +27,7 @@ import {MatTableModule} from '@angular/material/table';
   declarations: [
     AppComponent,
     routingComponents,
+    EditStudentComponent,
 
   ],
   imports: [
@@ -43,7 +47,7 @@ import {MatTableModule} from '@angular/material/table';
     MatSelectModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [TeacherComponent,Subject],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

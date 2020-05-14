@@ -20,23 +20,31 @@
     
       
     <div class="gradeTable">
-      <h2>Moja Klasa</h2>
-      <mat-selection-list #classStudents [multiple]="false">
-        <mat-list-option *ngFor="let student of students">
-          {{student.lastname}}
-        </mat-list-option>
-      </mat-selection-list>
-      <button mat-raised-button color="primary">Zarządaj ocenę</button>
+      <h2>Moja klas</h2>
+      <mat-form-field>
+        <mat-label>Wybierz ucznia</mat-label>
+        <mat-select [(value)]="selectedMyClass">
+          <mat-option *ngFor="let student of students" [value]="student.lastname">
+            {{student.lastname}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <button mat-raised-button color="primary" (click)="onClick(selectedMyClass)"><a routerLink="/teacher/edit" routerLinkActive="active">Zarządzaj ocenami</a></button>
     </div>
-
+    
 
     <div class="gradeTable">
       <h2>Moi Ucznowie</h2>
-      <mat-selection-list #classStudents [multiple]="false">
-        <mat-list-option *ngFor="let student of students">
-          {{student.lastname}}
-        </mat-list-option>
-      </mat-selection-list>
-      <button mat-raised-button color="primary">Zarządaj ocenę</button>
+      <mat-form-field>
+        <mat-label>Wybierz ucznia</mat-label>
+        <mat-select [(value)]="selectedMyStudents">
+          <mat-option *ngFor="let student of students" [value]="student.lastname">
+            {{student.lastname}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+      <button mat-raised-button color="primary" (click)="onClick(selectedMyStudents)"><a routerLink="/teacher/edit" routerLinkActive="active">Zarządzaj ocenami</a></button>
     </div>
   </div>

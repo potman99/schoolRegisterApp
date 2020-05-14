@@ -3,13 +3,14 @@
     <h1>STUDENT</h1>
     <mat-form-field appearance="fill">
       <mat-label>Wybierz studenta</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let student of students" [value]="student.value">
-            {{student.viewValue}}
-          </mat-option>
+        <mat-select >
+            <mat-option *ngFor="let student of students" [value]="student.value">
+              {{student.viewValue}}
+              {{selectChangeHandler(student.viewValue)}}
+            </mat-option>
         </mat-select>
     </mat-form-field>
-   
+
   <div class="userData">
     <button mat-raised-button color="primary"><a routerLink="/" routerLinkActive="active">POWRÓT</a></button>
     <h2>Imię:</h2>
@@ -29,9 +30,9 @@
     </ng-container>
 
     <!-- Name Column -->
-    <ng-container matColumnDef="grade">
+    <ng-container matColumnDef="grades">
       <th mat-header-cell *matHeaderCellDef> Ocena </th>
-      <td mat-cell *matCellDef="let element"> {{element.grade}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.grades}} </td>
     </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

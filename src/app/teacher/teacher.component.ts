@@ -20,10 +20,22 @@ const DATA: Student[]=[
 })
 export class TeacherComponent implements OnInit {
 
+  txt: string = "BYKU";
+  selectedMyClass;
+  selectedMyStudents;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+
+
+  onClick(txt:string):void {
+    console.log(txt);
+    
+  }
+
   students = DATA;
 }
+
