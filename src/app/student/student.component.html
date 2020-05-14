@@ -3,10 +3,9 @@
     <h1>STUDENT</h1>
     <mat-form-field appearance="fill">
       <mat-label>Wybierz studenta</mat-label>
-        <mat-select >
-            <mat-option *ngFor="let student of students" [value]="student.value">
-              {{student.viewValue}}
-              {{selectChangeHandler(student.viewValue)}}
+        <mat-select>
+            <mat-option *ngFor="let student of students" [value]="student.lastname">
+              {{student.lastname}}
             </mat-option>
         </mat-select>
     </mat-form-field>

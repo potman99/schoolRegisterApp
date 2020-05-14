@@ -1,25 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Student } from '../student';
 
-export class Student  {
-  value: string;
-  viewValue: string;
-  subjects :Subject[]
-}
-
-export interface Subject {
-  name: string;
-  grades: number[];
-}
-
-const ELEMENT_DATA: Subject[] = [
-  {name:"Fizyka",grades:[3,4] },
-  {name:"Matematyka",grades:[3,4,3,1,2] },
-  {name:"Poslski",grades:[3,4,4,4,4] },
-  {name:"Angielski",grades:[3,4,5,5,5,5] },
-  {name:"Historua",grades:[3,4,1,1] },
- 
-  
-];
 
 @Component({
   selector: 'student-root',
@@ -28,7 +9,7 @@ const ELEMENT_DATA: Subject[] = [
 })
 export class StudentComponent implements OnInit {
 
-  selectedUser:string = 'BIERNOL';
+  
 
   constructor() { }
 
@@ -36,13 +17,19 @@ export class StudentComponent implements OnInit {
   }
 
   students: Student[] = [
-    {value: 'trajnos', viewValue: 'TRAJNOS',subjects: [
-      {name:"PROGRAMOWANIE OBIEKTOWE", grades:[2,3,1,3,4,2,2]}
+    {firstname: 'trajnos', lastname: 'TRAJNOS',subjects: [
+      {name:"PROGRAMOWANIE ESSA", grades:[2,3,1,3,4,2,2]}
     ]},
-    {value: 'biernol', viewValue: 'BIERNOL', subjects: ELEMENT_DATA},
-    {value: 'puchala', viewValue: 'PUCHAŁA', subjects: ELEMENT_DATA}
+    {firstname: 'biernol', lastname: 'BIERNOL', subjects: [
+      {name:"PROGRAMOWANIE OBsadsadsadasd", grades:[2,2,2,2,2,2,2,2,2,2,1,3,4,2,2]}
+    ]},
+    {firstname: 'puchala', lastname: 'PUCHAŁA', subjects: [
+      {name:"PROGRAMOWANIE OBIEKTOWE", grades:[2,3,1,3,4,2,2]}
+    ]}
   ];
 
+  
+/*
   getSubjects(name):Subject[]{
     let s:Student;
     this.students.find((item)=>{
@@ -52,13 +39,17 @@ export class StudentComponent implements OnInit {
     })
     return s.subjects;
   }
-
+*/
   selectChangeHandler(text:string){
     console.log("CHANGE");
-    this.selectedUser = text;
+  }
+
+  display(text:string){
+    console.log(text);
   }
 
   displayedColumns: string[] = [ 'name', 'grades'];
-  dataSource = this.getSubjects(this.selectedUser);
+  selectedStudent:Student = this.students[1];
+  dataSource = this.selectedStudent.subjects;
 }
 

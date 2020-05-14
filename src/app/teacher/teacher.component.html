@@ -3,16 +3,16 @@
     <h1>NAUCZYCIEL</h1>
     <mat-form-field>
       <mat-label>Wybierz nauczyciela</mat-label>
-        <mat-select>
-          <mat-option>KORWIN MIKKE</mat-option>
-          <mat-option>ANDRZEJ DUDA</mat-option>
-          <mat-option>BYCZEK</mat-option>
-        </mat-select>
+      <mat-select [(value)]="selectedTeacher">
+        <mat-option *ngFor="let teacher of teachers" [value]="teacher.lastname">
+          {{teacher.lastname}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
     <div class="userData">
       <button mat-raised-button color="primary"><a routerLink="/" routerLinkActive="active">POWRÓT</a></button>
-      <h2>Imię:</h2>
-      <h2>Nazwisko:</h2>
+      <h2>Imię:{{selectedTeacher}}</h2>
+      <h2>Nazwisko:{{selectedTeacher}}</h2>
       <h2>WIEK:</h2>
       <h2>Numer tel:</h2>
       <h2>Email:</h2>

@@ -18,7 +18,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { TeacherComponent } from './teacher/teacher.component';
-import { Subject } from 'rxjs';
+import { Student } from './student';
+import { Teacher } from './teacher';
+import { Headmaster } from './headmaster';
 
 
 
@@ -47,7 +49,7 @@ import { Subject } from 'rxjs';
     MatSelectModule,
     MatTableModule
   ],
-  providers: [TeacherComponent,Subject],
+  providers: [TeacherComponent, Student,Teacher,Headmaster],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

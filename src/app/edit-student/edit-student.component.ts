@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {TeacherComponent} from '../teacher/teacher.component';
-import { Subject } from '../student/student.component';
+import { Student } from '../student';
 
-const DATA: Subject[]=[
-  {name:"Fizyka",grades:[4,4,4,4,4]}
-];
+let s = new Student();
 
 @Component({
   selector: 'app-edit-student',
@@ -14,21 +12,21 @@ const DATA: Subject[]=[
 export class EditStudentComponent implements OnInit {
 
   //name = this.teacherComponent.selectedMyClass;
-  name = "BOHDAN";
+
 
   constructor(
     private teacherComponent:TeacherComponent
   ) {
-    this.name = teacherComponent.selectedMyClass;
-    console.log(this.name);
+    s = teacherComponent.selectedMyClass;
+    console.log(s.lastname);
     
    }
 
   ngOnInit(): void {
-    console.log(name);
+    console.log(s.lastname);
     
   }
 
   displayedColumns: string[] = [ 'name', 'grades'];
-  dataSource = DATA;
+  dataSource = s.subjects;
 }
